@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
 
 class player extends Model
@@ -20,5 +21,10 @@ class player extends Model
     public function teams(): BelongsToMany
     {
         return $this->belongsToMany(Team::class);
+    }
+
+    public function polls(): MorphToMany
+    {
+        return $this->morphToMany(Poll::class, 'votable', 'poll_votes_pivot');
     }
 }
