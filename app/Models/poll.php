@@ -17,7 +17,7 @@ enum PollStates: string {
     case Closed = "closed";
 }
 
-class poll extends Model
+class Poll extends Model
 {
     use HasFactory;
 
