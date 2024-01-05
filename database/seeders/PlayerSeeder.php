@@ -2,10 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
 use App\Models\Player;
 use App\Models\Team;
+use Illuminate\Database\Seeder;
 
 class PlayerSeeder extends Seeder
 {
@@ -23,7 +22,7 @@ class PlayerSeeder extends Seeder
 
             $team->players()->attach($players);
 
-            $players->each(function($player) use ($team) {
+            $players->each(function ($player) use ($team) {
                 $player->current_team = $team->id;
                 $player->update();
             });

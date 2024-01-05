@@ -2,9 +2,8 @@
 
 namespace App\Policies;
 
+use App\Models\Game;
 use App\Models\User;
-use App\Models\game;
-use Illuminate\Auth\Access\Response;
 
 class GamePolicy
 {

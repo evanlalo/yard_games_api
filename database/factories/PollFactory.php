@@ -2,13 +2,16 @@
 
 namespace Database\Factories;
 
+use App\Models\PollStates;
+use App\Models\PollTypes;
 use Faker;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Arr;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\team>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\poll>
  */
-class TeamFactory extends Factory
+class PollFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -20,7 +23,9 @@ class TeamFactory extends Factory
         $faker = Faker\Factory::create();
 
         return [
-            'name' => $faker->word(),
+            'category' => $faker->sentence(),
+            'type' => Arr::random(PollTypes::cases()),
+            'state' => PollStates::Open,
         ];
     }
 }

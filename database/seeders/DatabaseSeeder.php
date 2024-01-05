@@ -15,7 +15,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             GameSeeder::class,
             TeamSeeder::class,
-            PlayerSeeder::class
+            PlayerSeeder::class,
+            // Always run the poll seeder last
+            PollSeeder::class,
         ]);
     }
 }

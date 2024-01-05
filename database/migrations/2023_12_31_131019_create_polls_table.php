@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('teams', function (Blueprint $table) {
+        Schema::create('polls', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->text('category');
+            $table->string('type');
+            $table->string('state');
             $table->timestamps();
         });
     }
@@ -23,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('teams');
+        Schema::dropIfExists('polls');
     }
 };
