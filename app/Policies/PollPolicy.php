@@ -18,7 +18,7 @@ class PollPolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, poll $poll): bool
+    public function view(User $user, Poll $poll): bool
     {
         //
     }
@@ -34,7 +34,7 @@ class PollPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, poll $poll): bool
+    public function update(User $user, Poll $poll): bool
     {
         //
     }
@@ -42,7 +42,7 @@ class PollPolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, poll $poll): bool
+    public function delete(User $user, Poll $poll): bool
     {
         //
     }
@@ -50,7 +50,7 @@ class PollPolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, poll $poll): bool
+    public function restore(User $user, Poll $poll): bool
     {
         //
     }
@@ -58,7 +58,7 @@ class PollPolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, poll $poll): bool
+    public function forceDelete(User $user, Poll $poll): bool
     {
         //
     }
