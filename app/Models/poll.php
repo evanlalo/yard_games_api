@@ -2,20 +2,21 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Support\Facades\DB;
 
-enum PollTypes: string {
-    case Player = "player";
-    case Team = "team";
+enum PollTypes: string
+{
+    case Player = 'player';
+    case Team = 'team';
 }
 
-enum PollStates: string {
-    case Open = "open";
-    case Closed = "closed";
+enum PollStates: string
+{
+    case Open = 'open';
+    case Closed = 'closed';
 }
 
 class Poll extends Model
@@ -25,22 +26,22 @@ class Poll extends Model
     protected $fillable = [
         'category',
         'type',
-        'state'
+        'state',
     ];
 
     protected $appends = [
-        "winner"
+        'winner',
     ];
 
     public function players(): MorphToMany
     {
         return $this->morphedByMany(Player::class, 'votable', 'poll_votes_pivot');
     }
- 
+
     public function teams(): MorphToMany
     {
         return $this->morphedByMany(Team::class, 'votable', 'poll_votes_pivot')
-            ->withPivot(["votes"]);
+            ->withPivot(['votes']);
     }
 
     public function getWinnerAttribute()

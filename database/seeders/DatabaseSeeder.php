@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
             TeamSeeder::class,
             PlayerSeeder::class,
             // Always run the poll seeder last
-            PollSeeder::class
+            PollSeeder::class,
         ]);
     }
 }

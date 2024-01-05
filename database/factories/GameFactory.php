@@ -2,9 +2,9 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Faker;
 use App\Models\Game;
+use Faker;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 const GAME_NAMES = [
     'Cornhole',
@@ -12,7 +12,7 @@ const GAME_NAMES = [
     'Flip Cup',
     'Badminton',
     'CanJam',
-    'BeersBee'
+    'BeersBee',
 ];
 
 /**
@@ -30,11 +30,11 @@ class GameFactory extends Factory
         $faker = Faker\Factory::create();
 
         $game_name = null;
-        foreach(GAME_NAMES as $name) {
+        foreach (GAME_NAMES as $name) {
             $game_name = $name;
-            $name_found = Game::where("name", $name)->exists();
+            $name_found = Game::where('name', $name)->exists();
 
-            if (!$name_found) {
+            if (! $name_found) {
                 break;
             } else {
                 continue;
@@ -42,9 +42,9 @@ class GameFactory extends Factory
         }
 
         return [
-            "name" => $game_name,
-            "description" => $faker->sentence(),
-            "active" => true
+            'name' => $game_name,
+            'description' => $faker->sentence(),
+            'active' => true,
         ];
 
     }

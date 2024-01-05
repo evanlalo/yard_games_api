@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
-
 class Player extends Model
 {
     use HasFactory;
@@ -15,7 +14,7 @@ class Player extends Model
     protected $fillable = [
         'first_name',
         'email',
-        'current_team'
+        'current_team',
     ];
 
     public function teams(): BelongsToMany

@@ -2,11 +2,10 @@
 
 namespace Database\Factories;
 
-use App\Models\poll;
 use App\Models\PollStates;
 use App\Models\PollTypes;
-use Illuminate\Database\Eloquent\Factories\Factory;
 use Faker;
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Arr;
 
 /**
@@ -24,9 +23,9 @@ class PollFactory extends Factory
         $faker = Faker\Factory::create();
 
         return [
-            "category" => $faker->sentence(),
-            "type" => Arr::random(PollTypes::cases()),
-            "state" => PollStates::Open
+            'category' => $faker->sentence(),
+            'type' => Arr::random(PollTypes::cases()),
+            'state' => PollStates::Open,
         ];
     }
 }
