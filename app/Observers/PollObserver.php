@@ -2,10 +2,10 @@
 
 namespace App\Observers;
 
-use App\Models\User;
 use App\Models\Poll;
 use App\Models\PollTypes;
 use App\Models\Team;
+use App\Models\User;
 
 class PollObserver
 {

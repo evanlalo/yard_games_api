@@ -2,9 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
 use App\Models\Team;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class UserSeeder extends Seeder
@@ -18,7 +17,7 @@ class UserSeeder extends Seeder
         $admin->assignRole('player', 'admin');
 
         $users = User::factory()->count(11)->create();
-        $users->each(function($user) {
+        $users->each(function ($user) {
             $user->assignRole('player');
         });
 
@@ -35,6 +34,6 @@ class UserSeeder extends Seeder
             });
 
         }
-        
+
     }
 }
