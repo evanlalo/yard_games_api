@@ -25,6 +25,11 @@ jobs:
       
         - name: Run composer install
           run: composer install -n --prefer-dist
+        
+        - name: Create Database
+          run: |
+            mkdir -p database
+            touch database/database.sqlite
     
         - name: Prepare Laravel Application
           run: |
