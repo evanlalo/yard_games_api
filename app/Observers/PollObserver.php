@@ -2,7 +2,7 @@
 
 namespace App\Observers;
 
-use App\Models\Player;
+use App\Models\User;
 use App\Models\Poll;
 use App\Models\PollTypes;
 use App\Models\Team;
@@ -19,9 +19,9 @@ class PollObserver
             $poll->teams()->attach($teams);
         }
 
-        if ($poll->type == PollTypes::Player) {
-            $players = Player::all();
-            $poll->players()->attach($players);
+        if ($poll->type == PollTypes::User) {
+            $users = User::all();
+            $poll->users()->attach($users);
         }
     }
 

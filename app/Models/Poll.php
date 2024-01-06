@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 enum PollTypes: string
 {
-    case Player = 'player';
+    case User = 'user';
     case Team = 'team';
 }
 
@@ -33,9 +33,9 @@ class Poll extends Model
         'winner',
     ];
 
-    public function players(): MorphToMany
+    public function users(): MorphToMany
     {
-        return $this->morphedByMany(Player::class, 'votable', 'poll_votes_pivot');
+        return $this->morphedByMany(User::class, 'votable', 'poll_votes_pivot');
     }
 
     public function teams(): MorphToMany
