@@ -11,9 +11,9 @@ class Team extends Model
 {
     use HasFactory;
 
-    public function players(): BelongsToMany
+    public function users(): BelongsToMany
     {
-        return $this->belongsToMany(Player::class);
+        return $this->belongsToMany(User::class);
     }
 
     public function polls(): MorphToMany
