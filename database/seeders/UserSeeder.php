@@ -15,18 +15,17 @@ class UserSeeder extends Seeder
     {
         // Create admin user
         $admin = User::factory()->create([
-            "email" => "admin@example.com",
-            'password' => "admin"
+            'email' => 'admin@example.com',
+            'password' => 'admin',
         ])->assignRole('player', 'admin');
-        
+
         $token = $admin->createToken('api_access');
         echo "\n\n Admin API access token: \n{$token->plainTextToken}\n\n";
 
-
         // Create default player user
         User::factory()->create([
-            "email" => "player@example.com",
-            'password' => null
+            'email' => 'player@example.com',
+            'password' => null,
         ])->assignRole('player');
 
         $users = User::factory()->player()->count(10)->create();

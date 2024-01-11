@@ -20,7 +20,7 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::middleware(['auth:sanctum', 'abilities:*'])->group(function() {
+Route::middleware(['auth:sanctum', 'abilities:*'])->group(function () {
     Route::apiResource('games', GameController::class);
     Route::apiResource('polls', PollController::class);
 });
