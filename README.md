@@ -1,11 +1,7 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+[![Laravel Forge Site Deployment Status](https://img.shields.io/endpoint?url=https%3A%2F%2Fforge.laravel.com%2Fsite-badges%2Fc6c4d882-a363-4987-8e7f-37881b1abd47%3Fdate%3D1&style=plastic)](https://forge.laravel.com/servers/749051/sites/2212232)
+
 # Yard Games API
 Laravel based API for the Yard Game tournaments.
 
@@ -31,8 +27,14 @@ You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you
 
 If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
+## Githun Actions
+Formatting and testing run on all pull requests. Failed pipelines will not be merged. Please ensure passing tests and proper formatting prior to creating a pull request.
+
 ## Formatting
 This project uses [Laravel Pint](https://laravel.com/docs/10.x/pint) for formatting.
 **TLDR;**
 - Run `./vendor/bin/pint --test` to check for issues.
 - Run `./vendor/bin/pint` to fix issues.
+
+## Testing
+Run unit tests with `php artisan test`.
