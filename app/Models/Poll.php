@@ -47,6 +47,7 @@ class Poll extends Model
     public function getWinnerAttribute()
     {
         return DB::table('poll_votes_pivot')->where('poll_id', '=', $this->id)
+            ->where('votes', '>', 0)
             ->orderByDesc('votes')->first();
     }
 }

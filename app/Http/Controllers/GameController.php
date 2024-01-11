@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoregameRequest;
 use App\Http\Requests\UpdategameRequest;
-use App\Models\game;
+use App\Models\Game;
 
 class GameController extends Controller
 {
@@ -13,15 +13,7 @@ class GameController extends Controller
      */
     public function index()
     {
-        return game::all();
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        return Game::all();
     }
 
     /**
@@ -35,15 +27,7 @@ class GameController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(game $game)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(game $game)
+    public function show(Game $game)
     {
         //
     }
@@ -51,7 +35,7 @@ class GameController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdategameRequest $request, game $game)
+    public function update(UpdategameRequest $request, Game $game)
     {
         //
     }
@@ -59,7 +43,7 @@ class GameController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(game $game)
+    public function destroy(Game $game)
     {
         //
     }

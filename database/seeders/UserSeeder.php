@@ -13,10 +13,22 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        $admin = User::factory()->create();
-        $admin->assignRole('player', 'admin');
+        // Create admin user
+        $admin = User::factory()->create([
+            'email' => 'admin@example.com',
+            'password' => 'admin',
+        ])->assignRole('player', 'admin');
 
-        $users = User::factory()->count(11)->create();
+        $token = $admin->createToken('api_access');
+        echo "\n\n Admin API access token: \n{$token->plainTextToken}\n\n";
+
+        // Create default player user
+        User::factory()->create([
+            'email' => 'player@example.com',
+            'password' => null,
+        ])->assignRole('player');
+
+        $users = User::factory()->player()->count(10)->create();
         $users->each(function ($user) {
             $user->assignRole('player');
         });
