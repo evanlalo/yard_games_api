@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\PollController;
+use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,7 +21,9 @@ Route::middleware(['auth:sanctum','abilities:*'])->get('/user', function (Reques
     return $request->user();
 });
 
-Route::middleware(['auth:sanctum', 'abilities:*'])->group(function () {
+Route::post('token', [AuthController::class, 'requestToken']);
+
+Route::middleware(['auth:sanctum','abilities:*'])->group(function () {
     Route::apiResource('games', GameController::class);
     Route::apiResource('polls', PollController::class);
-});
+  });
