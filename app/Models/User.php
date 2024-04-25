@@ -3,6 +3,8 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
@@ -28,6 +30,10 @@ class User extends Authenticatable
         'current_team',
     ];
 
+    protected $appends = [
+      'isAdmin'
+    ];
+
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -46,7 +52,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
+        'isAdmins' => 'boolean'
     ];
+
+    public function getIsAdminAttribute()
+    {
+      return $this->hasRole('admin');
+    }
 
     public function teams(): BelongsToMany
     {
