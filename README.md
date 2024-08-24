@@ -9,7 +9,7 @@ Laravel based API for the Yard Game tournaments.
 ## Getting Started
 To run the app, ensure that Laravel is fully installed on your machine.
 
-You then have two options for running the application. To run locally on your machine ensure you have access to a MySQL database. Update database connection settings in the root [env file](/.env).
+You then have two options for running the application. To run locally on your machine ensure you have access to a Postgres database. Update database connection settings as needed in the root [env file](/.env). Refer to [to the example env](/.env.example) for help.
 
 1. Seed your database with `php artisan migrate:fresh --seed`.
    * Take note of the token that gets outputed to the console if wanting to test with a REST client like Postman.
