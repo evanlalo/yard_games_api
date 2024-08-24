@@ -5,6 +5,26 @@
 # Yard Games API
 Laravel based API for the Yard Game tournaments.
 
+
+## Getting Started
+To run the app, ensure that Laravel is installed and you have access to a MySQL database. Update database connection settings in the root [env file](/.env).
+
+1. Seed your database with `php artisan migrate:fresh --seed`.
+   * Take note of the token that gets outputed to the console if wanting to test with a REST client like Postman.
+2. Run the api with `php artisan serve`
+
+## Githun Actions
+Formatting and testing run on all pull requests. Failed pipelines will not be merged. Please ensure passing tests and proper formatting prior to creating a pull request.
+
+## Formatting
+This project uses [Laravel Pint](https://laravel.com/docs/10.x/pint) for formatting.
+**TLDR;**
+- Run `./vendor/bin/pint --test` to check for issues.
+- Run `./vendor/bin/pint` to fix issues.
+
+## Testing
+Run unit tests with `php artisan test`.
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
@@ -26,15 +46,3 @@ Laravel has the most extensive and thorough [documentation](https://laravel.com/
 You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
 If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Githun Actions
-Formatting and testing run on all pull requests. Failed pipelines will not be merged. Please ensure passing tests and proper formatting prior to creating a pull request.
-
-## Formatting
-This project uses [Laravel Pint](https://laravel.com/docs/10.x/pint) for formatting.
-**TLDR;**
-- Run `./vendor/bin/pint --test` to check for issues.
-- Run `./vendor/bin/pint` to fix issues.
-
-## Testing
-Run unit tests with `php artisan test`.
