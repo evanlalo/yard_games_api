@@ -7,11 +7,20 @@ Laravel based API for the Yard Game tournaments.
 
 
 ## Getting Started
-To run the app, ensure that Laravel is installed and you have access to a MySQL database. Update database connection settings in the root [env file](/.env).
+To run the app, ensure that Laravel is fully installed on your machine.
+
+You then have two options for running the application. To run locally on your machine ensure you have access to a Postgres database. Update database connection settings as needed in the root [env file](/.env). Refer to [to the example env](/.env.example) for help.
 
 1. Seed your database with `php artisan migrate:fresh --seed`.
    * Take note of the token that gets outputed to the console if wanting to test with a REST client like Postman.
 2. Run the api with `php artisan serve`
+
+To run in docker, you can use [Laravel Sail](https://laravel.com/docs/11.x/sail).
+
+1. `./vendor/bin/sail up`.
+2. Add an alias for the sail command. See [here](https://laravel.com/docs/11.x/sail#configuring-a-shell-alias).
+   * When using sail, all `php artisan` commands become `sail artisan`. IE instead of `php artisan migrate:fresh --seed` use `sail artisan migrate:fresh --seed`.
+
 
 ## Githun Actions
 Formatting and testing run on all pull requests. Failed pipelines will not be merged. Please ensure passing tests and proper formatting prior to creating a pull request.
